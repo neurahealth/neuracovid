@@ -1,0 +1,184 @@
+.modalTitle {
+    color: #41B2CC;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+}
+.modalMakepayemnt{
+    font-size: 1.2rem;
+    text-transform: inherit;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 5%;
+    border-bottom: 1px solid #f8f8f8;
+    padding-bottom: 11px;
+}
+.makeStyles-paper-202 {
+    width: 100%;
+    border: none !important;
+    border-radius: 5px;
+}
+.payBtn{
+    width: 100%;
+    height: 45px;
+    background: #41B2CC !important;
+    color: #fff !important;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    /* font-weight: 600; */
+    margin-top: 2%;
+    border: none;
+    border-radius: 4px;
+    justify-content: center;
+}
+.payBtn:hover{
+    opacity: 0.8;
+    color: #fff;
+}
+:focus {
+    outline: none !important;
+}
+.payBtnWrapper{
+    margin: 10% 0;
+}
+
+.message.sr-field-error {
+    margin-top: 15px;
+    font-size: 12px;
+}
+div#checkout {
+    border-radius: 10px;
+    border: none;
+    padding: '35px 35px 24px !important';
+}
+
+.paymentSuccTitle {
+    font-size: 1.8rem;
+    color: #000;
+}
+.paymentSuccDesc {
+    font-size: 1rem;
+    color: #505050;
+}
+.successModal {
+    text-align: center;
+    margin: 5% 0;
+}
+.paymentSuccWrap {
+    margin: 2rem;
+}
+.buttonProgress{
+    color: #fff !important;
+    position: absolute;
+    left: 80%;
+}
+.patientDetailsWrapp,.resultStat{
+      text-align: left;
+     
+}
+.resultwrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.resultWrapp {
+    margin: 0 -15px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+.nomal .MuiLinearProgress-barColorPrimary {
+    background-color: #3eb530 !important;
+    width: 130px;
+}
+.nomal.MuiLinearProgress-determinate {
+    background-color: #e8e8e8;
+    width: 130px;
+}
+.pneumonia.MuiLinearProgress-determinate {
+    background-color: #e8e8e8;
+    width: 130px;
+}
+.covid.MuiLinearProgress-determinate {
+    background-color: #e8e8e8;
+    width: 130px;
+}
+.pneumonia .MuiLinearProgress-barColorPrimary {
+    background-color: #41B2CC !important;
+    
+}
+.MuiLinearProgress-determinate{
+    width: 130px;
+}
+.MuiLinearProgress-root {
+    height: 10px !important;
+    overflow: hidden;
+    position: relative;
+}
+   .tbleresult tr td {
+    padding: 5px 5px;
+}
+
+ .btnView{
+        text-transform: capitalize !important;
+        color:#49b2cc !important
+    }
+
+    .close {
+    background:#000 !important;
+    opacity: 1;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    z-index: 100;
+    padding-bottom: 4px !important;
+    right: -10px;
+    position: absolute;
+    margin-top: -30px;
+}
+
+.close:hover {
+    color: #e8d8d8 !important;
+    text-decoration: none;
+}
+
+.w50{
+    width:40%;
+    border-left: 1px solid #949494;
+    border-top: 1px solid #949494;
+    border-right: 1px solid #949494;
+    /* text-transform: uppercase; */
+}
+
+button.btnPayemnt.payBtn.coupon {
+    width: 55%;
+    display: initial;
+    margin-left: 10px;
+    background-color: #000 !important;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.couponmt{
+    margin-top: 10px;
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    vertical-align: text-bottom;
+    border: .1em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+    margin-right: 1rem;
+}
+button:disabled {
+    opacity: 0.8;
+}

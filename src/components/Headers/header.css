@@ -1,0 +1,146 @@
+.signOutWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15% !important;
+    left: auto;
+    right: 15px;
+     /* position: absolute; */
+     width: fit-content !important;
+}
+.btn-signOutBtn {
+    padding: 0 15px;
+    color: #fff;
+    margin-left: auto;
+    background: #0000;
+    font-size: 18px;
+    width: fit-content !important;
+    left: auto;
+    right: 15px;
+    border:none;
+    text-transform: capitalize;
+}
+.btn-signOutBtn:hover{
+    color: #000;
+}
+.seeHow {
+    display: flex;
+    align-items: center;
+}
+.seeHow a{
+    padding: 0 15px;
+    color: #fff;
+    margin-left: auto;
+    background: #0000;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.version{
+    display: flex;
+    justify-content: space-between;
+}
+
+.basic-single {
+    width: 180px;
+    color: #000;
+}
+/* .css-yk16xz-control {
+    background-color: unset !important;
+    border-color: unset!important;
+    border-width: 0!important;
+    cursor: pointer;
+} */
+.menu{
+      display: none;
+    }
+     .css-yk16xz-control {
+        border: none !important;
+        background-color: #0000 !important;
+        
+    }
+    .css-1wa3eu0-placeholder{
+        color: #fff !important;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .css-tlfecz-indicatorContainer {
+    color: #fff !important;
+    }
+    span.css-1okebmr-indicatorSeparator {
+        background-color: #fff !important;
+    }
+    
+    .css-1pahdxg-control,.css-1pahdxg-control:hover{
+        border: none !important;
+        box-shadow: none !important;
+        background-color: none !important;
+    }
+     .css-1pahdxg-control{
+          background-color: #0000 !important;
+     }
+     .css-tlfecz-indicatorContainer:hover, .css-1gtu0rj-indicatorContainer:hover,.css-1gtu0rj-indicatorContainer,.css-1uccc91-singleValue{
+         color: #fff !important;
+     }
+    
+@media screen and (max-width: 600px){
+    .footerText.version {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        font-size: 12px;
+    }
+    .loginCardWrapp {
+        justify-content: center;
+    }
+
+
+    .drawerHed{
+        display: flex;
+        height: 5rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        background-color: #41B2CC;
+        color: #fff;
+    }
+    .listItem {
+        height: 3.5rem;
+        font-size: 1rem;
+    }
+    .css-yk16xz-control {
+        border: none !important;
+    }
+    .css-1pahdxg-control,.css-1pahdxg-control:hover{
+        border: none !important;
+        box-shadow: none !important;
+    }
+  .css-1wa3eu0-placeholder{
+        color: #007bff !important;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .css-tlfecz-indicatorContainer {
+    color: #007bff !important;
+    }
+    button.btn-signOutBtn {
+      color: #007bff;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .css-g1d714-ValueContainer {
+        padding-left: 0 !important;
+    }
+    .navbar-nav {
+        display: none;
+    }
+    .menu{
+        display: block;
+        font-size: 2rem;
+        right: 20px;
+        position: absolute;
+    }
+   .imageSliderHome {
+    background-position: right;
+}
+}

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.primaryColor{
+  color:#41B2CC;
+}
+.primaryBgColor{
+  background-color:#41B2CC;
+  color: #fff;
+}
+.lightColor{
+  color: #fff !important;
+}
+.darkColor{
+  color: #2C2C2C;
+  color: #fff;
+}
+.darkBgColor{
+  background-color: #2C2C2C;
+  color: #fff;
+}
+
+#root {
+    height: 100%;
+}
+
+.footer{
+  /* height: 56px; */
+    padding: .5rem 1rem;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    margin: 0!important;
+  
+}
+.footerText{
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.makeStyles-paper-202,.makeStyles-paper-235 {
+    width: 400px;
+    border: none !important;
+    border-radius: 5px;
+}
+.makeStyles-paper-206:focus {
+    outline: none !important;
+}
+.MuiTableCell-stickyHeader {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    position: sticky;
+    background-color: #000;
+    color: #fff;
+    line-height: 1rem;
+}
+
+.MuiTableCell-stickyHeader {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: sticky;
+    background-color: #49b2cc !important;
+    color: #fff !important;
+}
+
+.MuiExpansionPanel-rounded {
+    border-radius: 0;
+    background-color: #f8f8f8 !important;
+}
+.MuiPaper-elevation1{
+  box-shadow: 0px 1px 0px #d8d8d8 !important;
+}
+
+.heading {
+    font-size: 1.2rem;
+    color: #49b2cc;
+}
+.faqDesc{
+  font-size: 1rem;
+  color:#2C2C2C
+}
+
+.btnmkpay{
+  text-transform: capitalize !important;
+  color: #f00 !important;
+}
+
+ .MuiTableCell-root {
+    padding: 8px 16px;
+}
+.MuiBox-root.MuiBox-root-424 {
+    padding-top: 20px;
+}
+#root {
+    height: 100%;
+    overflow: hidden;
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+    z-index: 2000 !important;
+}
