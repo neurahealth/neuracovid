@@ -31,7 +31,7 @@ function PaymentModal(props){
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
     const { t, i18n, resultid } = props;
-
+    const [disabled, setDisabled] = React.useState(false)
    
 
    const handleClose = () => {
@@ -59,10 +59,10 @@ function PaymentModal(props){
             
           
                 <div className={classes.paper} id="checkout">
-                <button className="close" onClick={handleClose}>x</button>
+                <button className="close" disabled={disabled} onClick={handleClose}>x</button>
                     <StripeProvider apiKey={apiKey}>
                         <Elements>
-                        <CheckoutForm t={t} i18n={i18n} resultid={resultid} />
+                        <CheckoutForm t={t} i18n={i18n} resultid={resultid} setDisabled={setDisabled} />
                         </Elements>
                     </StripeProvider>
                 </div>

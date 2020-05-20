@@ -27,7 +27,11 @@ const options = [
         this.state = {
             selectedOption:'en'
         };
-        lang = this.state.selectedOption
+        console.log("local storage lang",localStorage.getItem('lang'));
+        if (localStorage.getItem('lang') === null){
+            lang = this.state.selectedOption
+            localStorage.setItem('lang', lang);
+        }
     }
     
 

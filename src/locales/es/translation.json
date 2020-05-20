@@ -17,12 +17,12 @@
     "Sign out":"Cerrar sesión",
     "Upload Chest X-ray Image JPEG Format":"Cargue el formato JPEG de la imagen de rayos X del tórax",
     "Upon entering Patient details and image upload, you will be prompted to make payment. Upon successful payment, results will be displayed.": "Al ingresar los detalles del paciente y la carga de imágenes, se le pedirá que realice el pago. Tras el pago exitoso, se mostrarán los resultados.",
-    "Name of Patient":"Nombre del paciente",
+    "Name of Patient":"Identificador único del paciente",
     "Age":"Edad",
     "Male":"Masculino",
     "Female":"Femenino",
-    "Email address":"Correo electrónico",
-    "I agree Neura Health to run AI prediction on my provided Chest X-Ray Image. Please note that the inference/result is provided by running Inference using AI Model and not by any Doctor, Physician or Radiologist.":"Acepto que Neura Health ejecute la predicción de IA en mi imagen de rayos X de tórax proporcionada. Tenga en cuenta que la inferencia / resultado se proporciona ejecutando la Inferencia utilizando el Modelo AI y no por ningún Doctor, Médico o Radiólogo.",
+    "Email address":"Correo electrónico (opcional)",
+    "Disclaimer":"Tengo derecho a cargar imágenes de rayos X del tórax Y se ha eliminado toda la información de PHI (información de salud protegida) O tengo consentimiento explícito para cargar la imagen tal como está. Acepto que Neura Health ejecute la predicción de IA en mi imagen proporcionada.",
     "Click here Upload Image":"Da clic aquí para subir tu imagen ",
     "Proceed to payment":"Pagar",
     "Please fill the patient details properly":"Por favor complete los detalles del paciente correctamente",
@@ -49,7 +49,7 @@
     "Your payment was failed! Please try again.":"Su pago fue fallido! Inténtalo de nuevo.",
     "Retry Payemnt":"Reintente el pago",
     "Inference/Report":"Reporte de Inferencia",
-    "Patient Name":"Nombre del paciente",
+    "Patient Name":"Identificador único del paciente",
     "Email":"Email",
     "Normal":"Normal",
     "Pneumonia":"Neumonía",
@@ -99,7 +99,7 @@
     "Payments Status":"Estado de pagos",
     "Transaction ID":"ID de transacción",
     "Patient Age":"Edad del paciente",
-    "Email ID":"Identificación de correo",
+    "Email ID":"Correo electrónico",
     "File Name":"Nombre del archivo",
     "succeeded":"triunfada",
     "Use for Investigational purpose only. Not for Diagnosis.":"Usar solo con fines de investigación. No para el diagnóstico.",
@@ -109,7 +109,8 @@
     "Applied":"Aplicado",
     "Coupon is expired":"El cupón ha expirado",
     "Please enter valid Coupon Code":"Por favor ingrese un código de cupón válido",
-    "Coupon Code":"Código promocional"
+    "Coupon Code":"Código promocional",
+    "If you have DICOM image, you can convert to jpeg from here":"Si tiene una imagen DICOM, puede convertirla a JPEG desde aquí"
 
 
 }

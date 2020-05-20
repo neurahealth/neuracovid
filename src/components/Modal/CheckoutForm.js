@@ -128,6 +128,7 @@ class CheckoutForm extends Component {
   handleSubmit = async(ev)=> {
     ev.preventDefault();
     const { t, i18n, resultid } = this.props;
+    this.props.setDisabled(true)
     if (this.props.stripe) {
       let email = firebase.auth().currentUser.email;
       let uid = firebase.auth().currentUser.uid;
@@ -144,6 +145,7 @@ class CheckoutForm extends Component {
           processing: false,
           error: t('Please fill all details')
         });
+        this.props.setDisabled(false)
         return;
       }
       const { error, token } = await this.props.stripe.createToken({name: userName});
@@ -158,6 +160,7 @@ class CheckoutForm extends Component {
           disabled: false,
           error: `Payment failed: ${error.message}`
         });
+        this.props.setDisabled(false)
         return;
       }
      
@@ -225,6 +228,7 @@ class CheckoutForm extends Component {
 
   renderSuccess() {
     const { t, i18n, resultid } = this.props;
+    this.props.setDisabled(false)
     return (
       <div className="successModal">
         
@@ -252,6 +256,7 @@ class CheckoutForm extends Component {
 
   renderFailed() {
     const { t, i18n, resultid } = this.props;
+    this.props.setDisabled(false)
     return (
       <div className="successModal">
 
@@ -314,7 +319,7 @@ class CheckoutForm extends Component {
               </div>
             </div>
             <div className="sr-combo-inputs-row couponmt">
-                <input type="text" id="coupon" ref="coupon" placeholder={t("Coupon Code")} autoComplete="cardholder" disabled={this.state.couponDisabled} className="inputBoxCard w50" />
+                <input type="text" id="coupon" ref="coupon" placeholder={t("Coupon Code")} autoComplete="cardholder" disabled={this.state.couponDisabled} className="inputBoxCard w50" style={{fontSize:'12px' }} />
               <button className="btnPayemnt payBtn coupon" onClick={this.handleCoupon} disabled={this.state.couponDisabled}> 
               <Spinner
                 as="span"

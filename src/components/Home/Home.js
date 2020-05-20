@@ -35,7 +35,8 @@ export class Home extends Component {
             email: "",
             checked: false,
             fileuploaded: false,
-            progress:false
+            progress:false,
+            imageUploaded:false
         }
 
         this.getInitial = this.getInitial.bind(this); 
@@ -203,7 +204,8 @@ export class Home extends Component {
                 file: file,
                 fileName:file.name,
                 fileuploaded: true,
-                filepath: URL.createObjectURL(file)
+                filepath: URL.createObjectURL(file),
+                imageUploaded:true
             });
         })
     }
@@ -214,9 +216,11 @@ export class Home extends Component {
         
     }
      handleClose = () => {
-         this.setState({ open: false })
-        // props.open=false
-         window.location.reload();
+        // if (this.state.closeDissable == false){
+            this.setState({ open: false })
+            // props.open=false
+            window.location.reload();
+        // }
     };
     render() {
         const { t, i18n } = this.props;
@@ -253,15 +257,25 @@ export class Home extends Component {
                                         </Col>
                                     </Row>
                                     <TextField id="standard-basic" autoComplete="off" name="email" label={t("Email address")} className="inputBox" onChange={this.handlePatientDetails} />
+                                    <Row className="agree">
+                                    <FormControlLabel
+                                        control={<Checkbox name="checkedA" />}
+                                        label={t("Disclaimer")}
+                                        checked={this.state.checked}
+                                        onChange={this.onChange.bind(this)}
+                                        className="termText"
+                                    />
+                                </Row>
                                 </div>
                             </Col>
                             <Col xs={12} sm={12} md={6}>
+                                <Row><p style={{marginLeft: '30px', width: '90%'}}>{t("If you have DICOM image, you can convert to jpeg from here")}: <a href="https://convertio.co/dcm-jpg/" target="_blank">https://convertio.co/dcm-jpg/</a></p></Row>
                                 <Dropzone onDrop={this.onDrop} accept='image/jpeg' multiple={false} className="mt5">
                                     {({ getRootProps, getInputProps }) => (
                                         <section className="container">
                                             <div {...getRootProps({ className: "dropzone" })}>
                                                 <input {...getInputProps()} />
-                                                <p style={{ textAlign: 'center' }}> {t("Click here Upload Image")} {t("Drag 'n' drop file here")}</p>
+                                                <p style={{textAlign: 'center', display:`${this.state.imageUploaded === true ? 'none' : 'block'}`}}> {t("Click here Upload Image")} {t("Drag 'n' drop file here")}</p>
 
                                                 <aside>
                                                     <img alt="" src={this.state.filepath} className="imgPreview" alt={this.state.fileName} />
@@ -277,17 +291,10 @@ export class Home extends Component {
                        
                         <Row style={{marginBottom:'10%'}}>
                             <Col xs={12} sm={12} md={6}>
-                                <div className="aggree">
-                                    <FormControlLabel
-                                        control={<Checkbox name="checkedA" />}
-                                        label={t("I agree Neura Health to run AI prediction on my provided Chest X-Ray Image. Please note that the inference/result is provided by running Inference using AI Model and not by any Doctor, Physician or Radiologist.")}
-                                        checked={this.state.checked}
-                                        onChange={this.onChange.bind(this)}
-                                        className="termText"
-                                    />
-                                </div>
-                                <Button variant="contained" className="paymentBtn" onClick={this.handlePayment}>{t("Proceed to payment")} 
-                                
+                                <Button variant="contained" className="paymentBtn" onClick={this.handlePayment}>    
+                                    <div style={{paddingRight:'12px'}}>
+                                      {t("Proceed to payment")} 
+                                    </div>
                                     <Spinner
                                         as="span"
                                         animation="border"

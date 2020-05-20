@@ -40,8 +40,8 @@
 }
 .inputBox{
     width: 100%;
-    margin-top: 10px !important;
-    margin-bottom: 10px;
+    margin-top: 18px !important;
+    margin-bottom: 18px;
 }
 
 .inputBoxCard{
@@ -76,8 +76,9 @@
     display: flex;
     justify-content: space-between;
 }
-.aggree{
-    padding: 5% 0;
+.agree{
+    /* padding: 3% 0; */
+    margin-top: 26px
 }
 .dropzone {
     flex: 1;
@@ -107,12 +108,12 @@
     height: 45px;
     background: #41B2CC;
     color: #fff;
-    justify-content: space-evenly;
+    justify-content:center;
     display: flex;
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
-    margin-top: 2%;
+    margin-top: 7%;
 }
 .paymentBtn:hover{
     opacity: 0.8;
