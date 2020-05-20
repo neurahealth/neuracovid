@@ -1,4 +1,8 @@
 # This readme covers all requirements and dependencies from scratch for Neuracovid application
+<p align="justify">NeuraCovid application pairs with the AI model <a href="https://console.firebase.google.com">COVID-Net</a>, built and released by University Of Waterloo, Canada. We built NeuraCovid and releasing it under AGPL license to make the <a href="https://console.firebase.google.com">COVID-Net</a> AI Model easily accessible for users. This application is to be used for Investigational purpose only and NOT for diagnosis.</p>
+ 
+Its available at www.neuracovid.com
+
 <p align="justify">The NeuraCovid is a web application used to detect COVID-19 from chest X-ray images. This web application is used to increase productivity for Health Professionals and reduce time and cost for the patients. By using Neuracovid, the user will be able to detect AI prediction from the Chest X-ray image. The prediction results could be across three possibilities: Normal, Pneumonia or COVID-19.</p>
 
 ### This Application uses following technologies:
