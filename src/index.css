@@ -52,7 +52,7 @@ code {
 }
 
 .makeStyles-paper-202,.makeStyles-paper-235 {
-    width: 400px;
+    width: 100%;
     border: none !important;
     border-radius: 5px;
 }
@@ -112,4 +112,16 @@ code {
 }
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
     z-index: 2000 !important;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  width: 40%;
+  height: 22%;
+  padding-left: 42px;
+  margin-left: 27%;
+  margin-top: 5%;
+}
+
+.makeStyles-paper-304{
+  width: 100%;
 }

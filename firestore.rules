@@ -40,6 +40,14 @@ service cloud.firestore {
         allow read, write: if request.auth.uid == uid;
         allow create: if request.auth.uid != null;
       }
+      match /subscription/{document=**} {
+       allow read: if request.auth.uid == uid;
+       allow write: if request.auth.uid == uid;
+      }
+    }
+    match /subscription_plans/{document=**} {
+      allow read;
+      allow write;
     }
   }
 }

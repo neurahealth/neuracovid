@@ -33,6 +33,13 @@ const columns = [
         // format: (value) => value.toFixed(2),
     },
     {
+        id: 'source',
+        label: 'Payment Source',
+        minWidth: 100,
+        // align: 'right',
+        // format: (value) => value.toFixed(2),
+    },
+    {
         id: 'balance_transaction',
         label: 'Transaction ID',
         minWidth: 170,
@@ -68,26 +75,26 @@ constructor(props){
         this.setState({ rowsPerPage: +event.target.value });
         this.setState({ page: 0 });
     };
-_fetchData = async(user)=>{
-   try{
-    await firebase.firestore().collection('stripe_customers').doc(user).collection('charges').onSnapshot(snapshot => {
-        snapshot.forEach(doc => {
-            let list = [...this.state.charges.reverse()];
-            let items = doc.data();
-            items = JSON.stringify(items);
-            list.push(JSON.parse(items))
-            this.setState({ charges: list.reverse() })
-        })
-  });
-       
-       
-   }
-   catch(error){
-       console.error(error);
-       
-   }
+        _fetchData = async(user)=>{
+        try{
+            await firebase.firestore().collection('stripe_customers').doc(user).collection('charges').onSnapshot(snapshot => {
+                snapshot.forEach(doc => {
+                    let list = [...this.state.charges.reverse()];
+                    let items = doc.data();
+                    items = JSON.stringify(items);
+                    list.push(JSON.parse(items))
+                    this.setState({ charges: list.reverse() })
+                })
+        });
+            
+            
+        }
+        catch(error){
+            console.error(error);
+            
+        }
 
-  }
+        }
 
 
     render() {
@@ -121,9 +128,10 @@ _fetchData = async(user)=>{
                                                   
                                                         <TableCell>{v = i + 1} </TableCell>
                                                         <TableCell > {row.resultId} </TableCell>
-                                                        <TableCell > {row.billing_details ? row.billing_details.name : "-"} </TableCell>
+                                                        <TableCell > {row.billing_details ? row.billing_details.name : row.payerName} </TableCell>
                                                         <TableCell > ${(row.amount && row.status == 'succeeded') ? row.amount / 100 : 0} </TableCell>
                                                         <TableCell > {t(row.status)} </TableCell>
+                                                        <TableCell > {row.paymentSource ? row.paymentSource : "-"} </TableCell>
                                                         <TableCell > {row.balance_transaction ? row.balance_transaction : "-"} </TableCell>
 
                                               

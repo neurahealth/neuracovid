@@ -10,6 +10,7 @@ import { firebase } from '@firebase/app';
 import 'firebase/auth';
 import { withTranslation, Trans } from "react-i18next";
 import PropTypes from "prop-types";
+import HomeSubscription from '../Subscription/HomeSubscription';
 
 const firebaseAuthKey = 'firebaseAuthInProgress';
 const appTokenKey = 'appToken';
@@ -27,7 +28,6 @@ const options = [
         this.state = {
             selectedOption:'en'
         };
-        console.log("local storage lang",localStorage.getItem('lang'));
         if (localStorage.getItem('lang') === null){
             lang = this.state.selectedOption
             localStorage.setItem('lang', lang);
@@ -95,8 +95,8 @@ const LoginPage = ({ handleGoogleLogin, t, i18n, handleChange, selectedOption, s
                             <a href="https://prevencionydeteccion.mx/" target="_blank"> <img src={require('../../assets/images/pdeLogo-sp.jpg')} style={{ width: '110px', height: '110px', display: 'block', borderRadius: '5px', display: lang === 'es' || localStorage.getItem('lang') === 'es' ?'block':'none'}}/></a> 
                         :''}
                         
-                        {t("Fight Against")}  </div>
-                            <div className="slideSubHeading"> {t("Coronavirus [COVID-19] with Technology")}</div>
+                        {t("COVID-19 AI Prediction")}  </div>
+                    <div className="slideSubHeading"> {t("for Chest X-ray and CT Scan")}</div>
                              <div className="loginCardWrapp"> 
                                 <Card style={{ width: '20rem', height: '18rem' }}>
                                     <Card.Body style={{ display: "grid"}}>
@@ -123,7 +123,10 @@ const LoginPage = ({ handleGoogleLogin, t, i18n, handleChange, selectedOption, s
                 {/* <div className="loginDesc">
                     <h3>CT Image Analytics for COVID-19</h3>
                 </div> */}
+        <div className="warnig-notice"> NeuraCovid is not yet approved by Food and Drug Administration (FDA) or any other Regulatory body. We are currently looking into the product’s regulatory requirements. </div>
                 <Footer t={t} i18n={i18n}/>
+                <HomeSubscription t={t} i18n={i18n} style={{disply:'none'}} />
+        
             </Container>
         )
 

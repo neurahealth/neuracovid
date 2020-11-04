@@ -11,8 +11,9 @@ import Inferences from "../Inferences/";
 import Faq from "../Faq/";
 
 import Home from './Home';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+// import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { withTranslation, Trans } from "react-i18next";
+import Subscription from "../Subscription";
 
 const appTokenKey = "appToken";
 
@@ -28,7 +29,7 @@ function TabPanel(props) {
             aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
-            {value === index && <Box p={5}>{children}</Box>}
+            {value === index && <Box p={6}>{children}</Box>}
         </Typography>
     );
 }
@@ -82,7 +83,8 @@ componentDidMount(){
                             <Tab label={t("Uploads")} {...a11yProps(1)} className={this.state.value===1 ? "tabIndicator" : ""}/>
                                 <Tab label={t("Payments")} {...a11yProps(2)} className={this.state.value===2 ? "tabIndicator" : ""}/>
                                 <Tab label={t("Inferences")} {...a11yProps(3)} className={this.state.value===3 ? "tabIndicator" : ""}/>
-                            <Tab label={t("FAQ's")} {...a11yProps(4)} className={this.state.value === 4 ? "tabIndicator" : ""} />
+                            <Tab label={t("Subscription")} {...a11yProps(4)} className={this.state.value === 4 ? "tabIndicator" : ""} />
+                            <Tab label={t("FAQ's")} {...a11yProps(5)} className={this.state.value === 5 ? "tabIndicator" : ""} />
 
                             </Tabs>
                         </AppBar>
@@ -109,7 +111,12 @@ componentDidMount(){
                         </TabPanel>
                     <TabPanel value={this.state.value} index={4}>
                         <div className="tabswrapp">
-                            <Faq t={t} i18n={i18n}/>
+                            <Subscription t={t} i18n={i18n}/>
+                        </div>
+                    </TabPanel>
+                    <TabPanel value={this.state.value} index={5}>
+                        <div className="tabswrapp">
+                            <Faq t={t} i18n={i18n} />
                         </div>
                     </TabPanel>
                  

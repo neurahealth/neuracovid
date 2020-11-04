@@ -1,0 +1,49 @@
+
+
+
+
+
+
+Button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.subcribeBtn.MuiButton-fullWidth {
+    border-radius: 25px;
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-weight: 500;
+   color:#fff;
+   border: 2px solid #fff;
+     background-color: #4bcfef;
+    box-shadow: none;
+    margin:20px 0;
+}
+
+Button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.subcribeBtn.MuiButton-fullWidth:hover {
+   /* background-color: #4bcfef; */
+    background-color: #fff;
+   color:#4bcfef;
+   border: 2px solid #fff;
+   
+}
+
+.MuiPaper-root.MuiCard-root.cardContainer.MuiPaper-elevation1.MuiPaper-rounded:hover {
+     background-color: #4bcfef;
+    color:#fff;
+    z-index: 2;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    -webkit-box-shadow: 0 2px 15px 0 rgba(0,0,0,.15) !important;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.15) !important;
+}
+
+.MuiPaper-root.MuiCard-root.cardContainer.MuiPaper-elevation1.MuiPaper-rounded{
+   -webkit-box-shadow: 0 0 16px rgba(0,0,0,.1) !important;
+    box-shadow: 0 0 16px rgba(0,0,0,.1) !important;
+    border-radius: 10px;
+}
+
+.subcribeBtn{
+    background-color: '#41B2CC';
+}
+.subcribeBtn .MuiButton-label{
+    line-height: 0 !important;
+}

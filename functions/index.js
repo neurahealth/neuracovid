@@ -7,6 +7,7 @@ const { PubSub } = require(`@google-cloud/pubsub`);
 const credential_json_file = ['file_name.json']  // provide file path of credential file e.g. './serviceKey.json'
 const projectId = ['Project ID']
 const topicName = ['Topic Name']
+const CTscanTopicName = ['neuracovid-ct-upload']
 // End TODO
 
 const logging = new Logging({projectId: projectId});
@@ -20,41 +21,55 @@ admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
 
 exports.addFileDetailsAndCreatePubsub = functions.firestore.document('/stripe_customers/{userId}/files/{fileId}').onCreate(async (snap, context) => {
-     const val = snap.data();
-     const filesNames = val.fileNames
-     const url = val.url
-     const email = val.email
-     if (val === null){
-       return null;
-     }
-   
-     try {
-       const data = JSON.stringify({
-         userId: context.params.userId,
-         bucket: val.bucket,
-         fileName: filesNames,
-         url: val.fullPaths,
-         currentTime: val.currentTime,
-         time: val.time,
-         date: val.date,
-         path: val.path
-       });
-       const dataBuffer = Buffer.from(data);
-       await pubsub
-       .topic(topicName)
-       .publish(dataBuffer)
-       .then(messageId => {
-         db.collection('stripe_customers').doc(context.params.userId).set({messageId: messageId}, { merge: true });
-       })
-       .catch(err => {
-       });
-       await db.collection('stripe_customers').doc(context.params.userId).set({resultId: val.currentTime}, { merge: true });
-     } catch (error) {
-       await snap.ref.set({error: userFacingMessage(error)}, { merge:true });
-       await snap.ref.set({status: 'Error'}, { merge: true });
-       return reportError(error, {user: context.params.userId});
-     }
-   });
+   const val = snap.data();
+   const filesNames = val.fileNames
+   const url = val.url
+   const email = val.email
+   if (val === null){
+     return null;
+   }
+ 
+   try {
+     const data = JSON.stringify({
+       userId: context.params.userId,
+       bucket: val.bucket,
+       fileName: filesNames,
+       url: val.fullPaths,
+       currentTime: val.currentTime,
+       time: val.time,
+       date: val.date,
+       path: val.path
+     });
+     const dataBuffer = Buffer.from(data);
+      if (val.imageType == 'xRay'){
+        await pubsub
+        .topic(topicName)
+        .publish(dataBuffer)
+        .then(messageId => {
+          db.collection('stripe_customers').doc(context.params.userId).set({messageId: messageId}, { merge: true });
+        })
+        .catch(err => {
+          console.error('ERROR:', err);
+        });
+      }else{
+        await pubsub
+        .topic(CTscanTopicName)
+        .publish(dataBuffer)
+        .then(messageId => {
+          console.log(`Message ${messageId} published.`);
+          db.collection('stripe_customers').doc(context.params.userId).set({messageId: messageId}, { merge: true });
+        })
+        .catch(err => {
+          console.error('ERROR:', err);
+        });
+      }
+     await db.collection('stripe_customers').doc(context.params.userId).set({resultId: val.currentTime}, { merge: true });
+   } catch (error) {
+     await snap.ref.set({error: userFacingMessage(error)}, { merge:true });
+     await snap.ref.set({status: 'Error'}, { merge: true });
+     return reportError(error, {user: context.params.userId});
+   }
+ });
 
 // [START retriveStripeCoupon]
 exports.retriveStripeCoupon = functions.firestore.document('stripe_customers/{userId}/coupons/{id}').onCreate(async (snap, context) => {

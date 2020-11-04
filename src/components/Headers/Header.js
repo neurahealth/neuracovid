@@ -48,7 +48,7 @@ class Header extends Component {
         this.props.handleChange(selectedOption.value);
         
     }
-          
+     
     render() {
         const { selectedOption } = this.state;
          const { t, i18n } = this.props;
@@ -77,10 +77,10 @@ class Header extends Component {
                         <Divider/>
                         <ListItem className="listItem"> 
                             <ListItemIcon> <MdOndemandVideo size="1.5em"/> </ListItemIcon>
-                            <a href="https://youtu.be/9erwBwCPPzU" target="_blank"> {t("NeuraCovid Demo")} </a>
-                           
+                            <a href="https://youtu.be/VKXCu-VB7M8" target="_blank"> {t("NeuraCovid Demo")} </a>
                         </ListItem>
                         <Divider />
+                        
                         <ListItem className="listItem"> 
                             <ListItemIcon> <AiOutlineQuestionCircle size="1.5em" /></ListItemIcon>
                             <Link to="/faq" target="_blank"> {t("FAQ's")} </Link>
@@ -102,7 +102,7 @@ class Header extends Component {
                     </Nav>
                     <Nav>
                         <div className="signOutWrapper" style={{ display: `${this.state.userSignIn === false ? 'block' : 'none'}` }}>
-                            <div className="seeHow"> <a href="https://youtu.be/9erwBwCPPzU" target="_blank"> {t("NeuraCovid Demo")} </a> | <Link to="/faq" target="_blank"> {t("FAQ's")} </Link>
+                            <div className="seeHow"> <a href="https://youtu.be/VKXCu-VB7M8" target="_blank"> {t("NeuraCovid Demo")} </a>|<Link to="/subscription" target="_self"> {t("Subscription")} </Link> | <Link to="/faq" target="_blank"> {t("FAQ's")} </Link>
                                 {/* <MdLanguage size="1.5em"/> */}
                             <Select
                                 value={this.selectedOption}

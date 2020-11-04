@@ -137,3 +137,13 @@ body{
         font-weight: 500;
     }
 }
+
+.warnig-notice{
+    display: flex;
+    position: absolute;
+    bottom: 1%;
+    padding: 5%;
+    width: 100%;
+    justify-content: center;
+    color: #fff;
+}

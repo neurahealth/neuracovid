@@ -113,7 +113,7 @@
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
-    margin-top: 7%;
+    /* margin-top: 7%; */
 }
 .paymentBtn:hover{
     opacity: 0.8;
@@ -149,4 +149,13 @@ button:focus {
 }
 .MuiTableCell-root {
     padding: 10px 16px !important;
+}
+.MuiToggleButton-root.Mui-selected {
+    background-color:#41B2CC!important;
+}
+.MuiToggleButton-root {
+    color: black !important;
+    border: 1px solid #6c757d !important;
+    padding: 5px !important;
+    /* margin-left: 70px !important; */
 }

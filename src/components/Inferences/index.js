@@ -24,9 +24,21 @@ const columns = [
         // format: (value) => value.toLocaleString(),
     },
     {
+        id: 'imageType',
+        label: 'X-Ray/CT Scan',
+        minWidth: 100,
+    },
+    {
         id: 'prediction',
         label: 'Predictions',
         minWidth: 170,
+        // align: 'right',
+        format: (value) => value.toFixed(2),
+    },
+    {
+        id: 'feedbacks',
+        label: 'Ground Truth',
+        minWidth: 120,
         // align: 'right',
         format: (value) => value.toFixed(2),
     },
@@ -45,7 +57,7 @@ const styles ={
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '400px',
+        width: '550px',
         margin: 'auto',
         borderRadius: '5px',
         border: 'none'
@@ -161,7 +173,24 @@ _fetchData = async(user)=>{
                                                 <TableCell > {row.date_time_userId ? row.date_time_userId.date: <Skeleton />} </TableCell>
                                                 <TableCell > {row.userDetails ? row.userDetails.patient_name : <Skeleton />} </TableCell>
                                                 <TableCell > {row.userDetails ? row.userDetails.patient_age : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? row.detections.imageType : <Skeleton /> } </TableCell>
                                                 <TableCell style={{textTransform:"capitalize"}}> {row.detections ? t(row.detections.prediction) : <Skeleton /> } </TableCell> 
+                                                <TableCell style={{ textTransform: "capitalize" }}> {row.feedbacks ? t(row.feedbacks.feedback) : <Skeleton />} </TableCell> 
+
+                                                <TableCell > <Button className="btnView" onClick={() => this.viewdetection(row.date_time_userId.date)}>{t("View Detections")}</Button></TableCell> 
+                                            </TableRow>
+                                        )
+                                    } else if (row.subscription == "succeeded" && row.detections) {
+                                        return (
+                                            <TableRow hover  tabIndex={-1} key={i} >       
+                                                <TableCell style={{ padding: '5px 15px' }}> {v=i+1}</TableCell>
+                                                <TableCell > {row.date_time_userId ? row.date_time_userId.date: <Skeleton />} </TableCell>
+                                                <TableCell > {row.userDetails ? row.userDetails.patient_name : <Skeleton />} </TableCell>
+                                                <TableCell > {row.userDetails ? row.userDetails.patient_age : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? row.detections.imageType : <Skeleton /> } </TableCell>
+                                                <TableCell style={{textTransform:"capitalize"}}> {row.detections ? t(row.detections.prediction) : <Skeleton /> } </TableCell> 
+                                                <TableCell style={{ textTransform: "capitalize" }}> {row.feedbacks ? t(row.feedbacks.feedback) : "--"} </TableCell> 
+
                                                 <TableCell > <Button className="btnView" onClick={() => this.viewdetection(row.date_time_userId.date)}>{t("View Detections")}</Button></TableCell> 
                                             </TableRow>
                                         )
@@ -173,28 +202,50 @@ _fetchData = async(user)=>{
                                                 <TableCell > {row.date_time_userId? row.date_time_userId.date: <Skeleton />} </TableCell>
                                                 <TableCell > { row.userDetails ? row.userDetails.patient_name : <Skeleton />} </TableCell>
                                                 <TableCell > { row.userDetails ? row.userDetails.patient_age : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? row.detections.imageType : <Skeleton /> } </TableCell>
                                                 <TableCell > {row.detections ? t(row.detections.prediction) : <Skeleton /> } </TableCell>
+                                                <TableCell style={{ textTransform: "capitalize" }}> {row.feedbacks ? t(row.feedbacks.feedback) : "--"} </TableCell> 
+
                                                 <TableCell ><span style={{padding:'6px 8px'}}>  {t("Results in process")}</span> </TableCell>  
                                             </TableRow>
                                         )
-                                    } else if(row.payment == "error" ) {
+                                    }  else if (row.subscription == "succeeded") {
+                                        return (
+                                            <TableRow hover role="checkbox" tabIndex={-1} key={i}>       
+                                                <TableCell>{v=i+1}</TableCell>
+                                                <TableCell > {row.date_time_userId? row.date_time_userId.date: <Skeleton />} </TableCell>
+                                                <TableCell > { row.userDetails ? row.userDetails.patient_name : <Skeleton />} </TableCell>
+                                                <TableCell > { row.userDetails ? row.userDetails.patient_age : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? row.detections.imageType : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? t(row.detections.prediction) : <Skeleton /> } </TableCell>
+                                                <TableCell style={{ textTransform: "capitalize" }}> {row.feedbacks ? t(row.feedbacks.feedback) : "--"} </TableCell> 
+
+                                                <TableCell ><span style={{padding:'6px 8px'}}>  {t("Subscribed")}</span> </TableCell>  
+                                            </TableRow>
+                                        )
+                                    }
+                                    else if(row.payment == "error" ) {
                                         return (
                                             <TableRow hover role="checkbox" tabIndex={-1} key={i}>       
                                                 <TableCell>{v=i+1}</TableCell>
                                                 <TableCell > { row.date_time_userId? row.date_time_userId.date: <Skeleton />} </TableCell>
                                                 <TableCell > { row.userDetails ? row.userDetails.patient_name : <Skeleton />} </TableCell>
                                                 <TableCell > { row.userDetails ? row.userDetails.patient_age : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? row.detections.imageType : <Skeleton /> } </TableCell>
+                                                <TableCell > - </TableCell>
                                                 <TableCell > - </TableCell>
                                                 <TableCell > <span style={{padding:'6px 8px'}}>  {t("Payment Fail")}</span> </TableCell>  
                                             </TableRow>
                                         )
-                                    } else if(row.payment == "pending" ) {
+                                        } else if (row.payment == "pending" && row.subscription == "pending" ) {
                                         return (
                                             <TableRow hover role="checkbox" tabIndex={-1} key={i}>       
                                                 <TableCell>{v=i+1}</TableCell>
                                                 <TableCell > { row.date_time_userId? row.date_time_userId.date: <Skeleton />} </TableCell>
                                                 <TableCell > { row.userDetails ? row.userDetails.patient_name : <Skeleton />} </TableCell>
                                                 <TableCell > { row.userDetails ? row.userDetails.patient_age : <Skeleton /> } </TableCell>
+                                                <TableCell > {row.detections ? row.detections.imageType : <Skeleton /> } </TableCell>
+                                                <TableCell > - </TableCell>
                                                 <TableCell > - </TableCell>
                                                 <TableCell > <Button className=" btnmkpay" onClick={() => this.makepayment(row.date_time_userId.date)}>{t("Make Payment")}</Button> </TableCell>  
                                             </TableRow>
@@ -213,7 +264,7 @@ _fetchData = async(user)=>{
                             onChangePage={this.handleChangePage}
                             onChangeRowsPerPage={this.handleChangeRowsPerPage}
                         />
-                        {this.state.isOpenPayment && <PaymentModal t={t} i18n={i18n} resultid={this.state.resultId} open={this.paymenthandleClose}/> }
+                        {this.state.isOpenPayment && <PaymentModal t={t} i18n={i18n} resultid={this.state.resultId} open={this.paymenthandleClose} source="home"/> }
                         {this.state.isOpen &&
                             <Modal
                                 aria-labelledby="spring-modal-title"
@@ -229,6 +280,7 @@ _fetchData = async(user)=>{
                             >
                             <Result t={t} i18n={i18n} resultid={this.state.resultId}/>
                             </Modal>
+                        
                         }
                     
                     </div>

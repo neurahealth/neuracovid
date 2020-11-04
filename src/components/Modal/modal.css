@@ -13,14 +13,25 @@
     margin-bottom: 5%;
     border-bottom: 1px solid #f8f8f8;
     padding-bottom: 11px;
+
+    /* background-color:'#41B2CC';
+        color: '#fff';
+        height:60;
+        width:'100%';
+        display: "flex";
+        align-items: "center";
+        justify-content: "center";
+        font-weight: "500"; */
 }
 .makeStyles-paper-202 {
     width: 100%;
     border: none !important;
     border-radius: 5px;
+    padding: 5% 8%;
 }
 .payBtn{
     width: 100%;
+    max-width: 350px;
     height: 45px;
     background: #41B2CC !important;
     color: #fff !important;
@@ -53,6 +64,11 @@ div#checkout {
     border-radius: 10px;
     border: none;
     padding: '35px 35px 24px !important';
+   max-height: 95%;
+    overflow: auto;
+    overflow: auto;
+    /* padding: 0px 15px !important; */
+    padding: 0px!important;
 }
 
 .paymentSuccTitle {
@@ -62,13 +78,18 @@ div#checkout {
 .paymentSuccDesc {
     font-size: 1rem;
     color: #505050;
+    display: flex;
+    text-transform: capitalize;
+    text-align: center;
+    justify-content: center;
 }
 .successModal {
     text-align: center;
-    margin: 5% 0;
+    margin: 15px 0;
+    width: '100%';
 }
 .paymentSuccWrap {
-    margin: 2rem;
+margin: 20px 2rem;
 }
 .buttonProgress{
     color: #fff !important;
@@ -85,10 +106,15 @@ div#checkout {
     align-items: center;
 }
 .resultWrapp {
-    margin: 0 -15px;
+    /* margin: 0 -15px; */
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
+    min-width: 400px;
+    max-width: 550px;
+}
+.makepaywrap{
+    min-width: 350px;
 }
 .nomal .MuiLinearProgress-barColorPrimary {
     background-color: #3eb530 !important;
@@ -96,15 +122,15 @@ div#checkout {
 }
 .nomal.MuiLinearProgress-determinate {
     background-color: #e8e8e8;
-    width: 130px;
+    width: 90%;
 }
 .pneumonia.MuiLinearProgress-determinate {
     background-color: #e8e8e8;
-    width: 130px;
+    width: 90%;
 }
 .covid.MuiLinearProgress-determinate {
     background-color: #e8e8e8;
-    width: 130px;
+   width: 90%;
 }
 .pneumonia .MuiLinearProgress-barColorPrimary {
     background-color: #41B2CC !important;
@@ -137,16 +163,43 @@ div#checkout {
     height: 30px;
     z-index: 100;
     padding-bottom: 4px !important;
-    right: -10px;
+    right: 10px;
     position: absolute;
-    margin-top: -30px;
+    margin-top: 30px;
 }
 
 .close:hover {
     color: #e8d8d8 !important;
     text-decoration: none;
 }
+button.payclose {
+    margin-top: -40px;
+    /* right: 118px; */
+    background: #000 !important;
+    opacity: 1;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    z-index: 100;
+    font-weight: 700;
+    line-height: 0;
+    float: right;
+    text-shadow: 0 1px 0 #fff;
+    padding-bottom: 4px !important;
+    position: relative;
+}
 
+button.closeSuccess{
+    /* margin-top: 10px; */
+    /* right: 10px; */
+    margin-top: 0px;
+    margin-right: 25px;
+}
+.paymentSuccBtnWrap {
+    padding: 5%;
+}
 .w50{
     width:40%;
     border-left: 1px solid #949494;
@@ -167,7 +220,10 @@ button.btnPayemnt.payBtn.coupon {
 .couponmt{
     margin-top: 10px;
 }
-
+.paypal-checkout-form {
+   
+    min-width: 350px;
+}
 .spinner-border {
     display: inline-block;
     width: 1.5rem !important;
@@ -181,4 +237,139 @@ button.btnPayemnt.payBtn.coupon {
 }
 button:disabled {
     opacity: 0.8;
+}
+.descTitle{
+    color: #007bff ;
+    font-size: 12px;
+    
+}
+table.tbleresult {
+    width: 100%;
+}
+.sr-payment-form {
+    padding: 5%;
+    width: 350px;
+    display: contents;
+}
+
+.payresult{
+    margin-top: 10px !important;
+    right: 15px !important;
+}
+
+/* subscription css  */
+.plan_card {
+    width: 100%;
+    height: 110px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 0 4px 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+    border: 1px solid #fff;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.plan_card:hover,.plan_card.active{
+    background-color: #4bcfef;
+    color: #fff;
+    z-index: 2;
+    transform: scale(1.03);
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.15) !important;
+}
+.plan_card:hover span.plan_title,.plan_card.active span.plan_title {
+    color: #fff;
+}
+.plan_title{
+    font-size: 18px;
+    display: block;
+    color: #49b3cc;
+    font-weight: 600;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.plan_wrap .carousel._inr .plan_card .row ._lt {
+    width: calc(70% - 40px);
+}
+.plan_card .status {
+    width: 21px;
+    height: 21px;
+    border: 2px solid rgba(0,0,0,0.35);
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.plan_card.active .status {
+    border: 2px solid #f3cb51;
+    background: #f3cb51;
+}
+
+.plan_card .row ._lt {
+    float: left;
+    padding-left: 40px;
+    position: relative;
+    /* width: calc(90% - 40px); */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plan_card .row .year {
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    white-space: normal;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plan_card .row ._rt {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.plan_card .row_2 ._rt {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.suucessBg{
+    background-image: url('/images/payment_success.png');
+    background-size: cover;
+    background-position: center;
+    width: 285px;
+    height: 208px;
+    margin: auto;
+}
+.makeStyles-optionBtn-16:hover {
+    opacity: 0.7;
+    background-color: #47cbea !important;
+}
+.makeStyles-optionBtn-16 span.MuiButton-label {
+    font-size: 12px;
+}
+@media screen and (max-width: 850px){
+    .paymentBtn {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
 }

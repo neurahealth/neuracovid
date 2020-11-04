@@ -110,7 +110,19 @@
     "Coupon is expired":"El cupón ha expirado",
     "Please enter valid Coupon Code":"Por favor ingrese un código de cupón válido",
     "Coupon Code":"Código promocional",
-    "If you have DICOM image, you can convert to jpeg from here":"Si tiene una imagen DICOM, puede convertirla a JPEG desde aquí"
+    "If you have DICOM image, you can convert to jpeg from here":"Si tiene una imagen DICOM, puede convertirla a JPEG desde aquí",
+    "Geographic and Opacity Severity":"Severidad geográfica y gravedad de opacidad",
+    "Geographic extent score for right + left lung (0 - 8)":"Puntaje de extensión geográfica para pulmón derecho + izquierdo (0 - 8)",
+    "Geographic severity":"Severidad Geográfica",
+    "Opacity extent score for right + left lung (0 - 6)": "Puntaje de extensión de opacidad para pulmón derecho + izquierdo (0 - 6)",
+    "Opacity severity":"Gravedad de opacidad",
+    "Prediction Heatmap":"Mapa de calor de predicción",
+    "Click to preview":"Haga clic para obtener una vista previa",
+    "Note":"Nota",
+    "Geographic Extend Score: For each lung:  0 = no involvement, 1 = Less than 25%, 2 = 25-50%, 3 = 50-75%, 4 = Greate than 75% involvement.":
+    "Puntaje de extensión geográfica:Para cada pulmón: 0 = sin compromiso; 1 = <25%; 2 = 25-50%; 3 = 50-75%; 4 => 75% de participación",
+    "Opacity extent score: For each lung: 0 = no opacity, 1 = ground glass opacity, 2 =consolidation, 3 = white-out.":
+    "Puntaje de extensión de opacidad:Para cada pulmón: 0 = sin opacidad; 1 = opacidad del vidrio esmerilado; 2 = consolidación; 3 = blanqueado."
 
 
 }
